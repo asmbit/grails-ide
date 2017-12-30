@@ -1,3 +1,10 @@
+
+This fork purpose is to update original Grails IDE to work with Eclipse Oxygen.
+
+You can find [here](https://github.com/TomSzymko/grails-ide-oxygen) description how to install it on fresh Eclipse Oxygen instance.
+
+---
+
 # Grails IDE
 
   The Grails IDE brings you first class developer tooling for Grails into Eclipse.
