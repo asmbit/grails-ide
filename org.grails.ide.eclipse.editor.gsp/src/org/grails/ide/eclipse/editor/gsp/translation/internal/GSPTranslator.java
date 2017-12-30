@@ -567,6 +567,11 @@ public class GSPTranslator implements Externalizable {
             public int getEID() {
                 return problemEID;
             }
+
+            public boolean isInfo() {
+                // TODO Auto-generated method stub
+                return false;
+            }
         };
     }
 

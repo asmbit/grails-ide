@@ -12,7 +12,7 @@ package org.grails.ide.eclipse.editor.gsp.adapter;
 
 import java.util.List;
 
-import org.codehaus.groovy.eclipse.codeassist.proposals.GroovyJavaFieldCompletionProposal;
+import org.codehaus.groovy.eclipse.codeassist.completions.GroovyJavaFieldCompletionProposal;
 import org.codehaus.groovy.eclipse.codeassist.requestor.GroovyCompletionProposalComputer;
 import org.codehaus.groovy.eclipse.core.GroovyCore;
 import org.codehaus.jdt.groovy.model.GroovyCompilationUnit;

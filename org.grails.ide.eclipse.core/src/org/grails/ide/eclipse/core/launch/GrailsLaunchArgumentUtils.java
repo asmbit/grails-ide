@@ -667,11 +667,11 @@ public class GrailsLaunchArgumentUtils {
 	public static String getRuntimeBundleFor(GrailsVersion version) {
 		if (version.compareTo(GrailsVersion.V_2_2_)>=0) {
 			return "org.grails.ide.eclipse.runtime22";
-		} else if (version.compareTo(GrailsVersion.SMALLEST_SUPPORTED_VERSION)<=0) {
+		}// else if (version.compareTo(GrailsVersion.SMALLEST_SUPPORTED_VERSION)<=0) {
 			throw new Error("This version of Grails no longer supported: "+version);
-		} else {
-			return "org.grails.ide.eclipse.runtime13";
-		}
+//		} else {
+//			return "org.grails.ide.eclipse.runtime13";
+//		}
 	}
 	
 	public static void setSystemProperties(

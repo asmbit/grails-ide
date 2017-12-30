@@ -14,7 +14,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.codehaus.groovy.eclipse.codeassist.processors.IProposalFilter;
-import org.codehaus.groovy.eclipse.codeassist.proposals.GroovyCategoryMethodProposal;
+//import org.codehaus.groovy.eclipse.codeassist.proposals.GroovyCategoryMethodProposal;
+import org.codehaus.groovy.eclipse.codeassist.proposals.GroovyMethodProposal;
 import org.codehaus.groovy.eclipse.codeassist.proposals.IGroovyProposal;
 import org.codehaus.groovy.eclipse.codeassist.requestor.ContentAssistContext;
 import org.eclipse.jdt.ui.text.java.JavaContentAssistInvocationContext;
@@ -26,8 +27,8 @@ public class GrailsProposalFilter implements IProposalFilter {
             JavaContentAssistInvocationContext javaContext) {
         for (Iterator<IGroovyProposal> iter = proposals.iterator(); iter.hasNext();) {
             IGroovyProposal proposal = iter.next();
-            if (proposal instanceof GroovyCategoryMethodProposal
-                    && ((GroovyCategoryMethodProposal) proposal).getMethod().getName().equals("identity")) {
+            if (proposal instanceof GroovyMethodProposal
+                    && ((GroovyMethodProposal) proposal).getMethod().getName().equals("identity")) {
                 iter.remove();
             }
         }

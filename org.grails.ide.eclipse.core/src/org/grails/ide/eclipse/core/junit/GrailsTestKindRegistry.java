@@ -10,29 +10,27 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.core.junit;
 
-import java.util.ArrayList;
+import java.util.List;
 
-import org.eclipse.jdt.internal.junit.launcher.ITestKind;
+import org.eclipse.jdt.internal.junit.launcher.TestKind;
 import org.eclipse.jdt.internal.junit.launcher.TestKindRegistry;
-
 
 /**
  * @author Kris De Volder
- *
  * @since 2.9
  */
 public class GrailsTestKindRegistry {
 
-	public static void initialize() {
-		TestKindRegistry registry = TestKindRegistry.getDefault();
-		ArrayList<ITestKind> testKinds = registry.getAllKinds(); 
-		for (int i = 0; i < testKinds.size(); i++) {
-			ITestKind testKind = testKinds.get(i);
-			String id = testKind.getId();
-			if (TestKindRegistry.JUNIT4_TEST_KIND_ID.equals(id)) {
-				testKinds.set(i, new GrailsAwareTestKind(testKind));
-			}
-		}
-	}
-	
+    public static void initialize() {
+        TestKindRegistry registry = TestKindRegistry.getDefault();
+        List<TestKind> testKinds = registry.getAllKinds();
+        for (int i = 0; i < testKinds.size(); i++) {
+            TestKind testKind = testKinds.get(i);
+            String id = testKind.getId();
+            if (TestKindRegistry.JUNIT4_TEST_KIND_ID.equals(id)) {
+                testKinds.set(i, new GrailsAwareTestKind(testKind));
+            }
+        }
+    }
+
 }

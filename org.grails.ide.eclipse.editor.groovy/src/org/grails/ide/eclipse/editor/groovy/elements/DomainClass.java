@@ -72,7 +72,7 @@ public class DomainClass extends AbstractGrailsElement implements INavigableGrai
     
     public class NamedQueryClassNode extends ClassNode {
         public NamedQueryClassNode() {
-            super(NAMED_CRITERIA_PROXY, VariableScope.OBJECT_CLASS_NODE.getModifiers(), VariableScope.GROOVY_OBJECT_SUPPORT);
+            super(NAMED_CRITERIA_PROXY, VariableScope.OBJECT_CLASS_NODE.getModifiers(), VariableScope.GROOVY_OBJECT_CLASS_NODE);
             this.isPrimaryNode = false;
             this.setRedirect(typeCache.getClassNode(NAMED_CRITERIA_PROXY));
             this.setGenericsPlaceHolder(true);

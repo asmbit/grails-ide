@@ -10,8 +10,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.core.wizard;
 
-import static org.springsource.ide.eclipse.commons.livexp.core.ValidationResult.error;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -33,7 +31,6 @@ import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.internal.GrailsNature;
 import org.grails.ide.eclipse.core.model.GrailsVersion;
 import org.grails.ide.eclipse.core.model.IGrailsInstall;
-import org.springsource.ide.eclipse.commons.livexp.core.CompositeValidator;
 import org.springsource.ide.eclipse.commons.livexp.core.LiveExpression;
 import org.springsource.ide.eclipse.commons.livexp.core.LiveVariable;
 import org.springsource.ide.eclipse.commons.livexp.core.ValidationResult;
@@ -77,15 +74,15 @@ public class GrailsImportWizardCore {
 		protected ValidationResult compute() {
 			final File rf = location.getValue();
 			if (rf==null) {
-				return error("Specify the location of a Grails project to import.");
+				return ValidationResult.error("Specify the location of a Grails project to import.");
 			} else if (!rf.exists()) {
-				return error("'"+rf+"' doesn't exist.");
+				return ValidationResult.error("'"+rf+"' doesn't exist.");
 			} else if (!rf.isDirectory()) {
-				return error("'"+rf+"' is not a directory.");
+				return ValidationResult.error("'"+rf+"' is not a directory.");
 			} else if (!GrailsNature.looksLikeGrailsProject(rf)) {
-				return error("'"+rf+"' doesn't look like a Grails project");
+				return ValidationResult.error("'"+rf+"' doesn't look like a Grails project");
 			} else if (existsInWorkspace(rf.getName())) {
-				return error("Project '"+rf.getName()+"' already exists in the workspace.");
+				return ValidationResult.error("Project '"+rf.getName()+"' already exists in the workspace.");
 			}
 			return ValidationResult.OK;
 		}
@@ -116,7 +113,7 @@ public class GrailsImportWizardCore {
 		protected ValidationResult compute() {
 			File targetLocation = getCopyLocation();
 			if (targetLocation!=null && targetLocation.exists()) {
-				return error("Can not copy project into workspace because '"+targetLocation+"' already exists");
+				return ValidationResult.error("Can not copy project into workspace because '"+targetLocation+"' already exists");
 			}
 			return ValidationResult.OK;
 		}
@@ -164,7 +161,7 @@ public class GrailsImportWizardCore {
 		protected ValidationResult compute() {
 			if (isMaven.getValue()) {
 				if (!ignoreMavenWarning.getValue()) {
-					return error("Mavenized project");
+					return ValidationResult.error("Mavenized project");
 				}
 			}
 			return ValidationResult.OK;
@@ -180,14 +177,14 @@ public class GrailsImportWizardCore {
 		protected ValidationResult compute() {
 			IGrailsInstall install = grailsInstall.getValue();
 			if (install == null) {
-				return error("No Grails install selected");
+				return ValidationResult.error("No Grails install selected");
 			} else {
 				GrailsVersion installVersion = install.getVersion();
 				GrailsVersion projectVersion = GrailsVersion.getGrailsVersion(location.getValue());
 				if (projectVersion.equals(GrailsVersion.UNKNOWN)) {
-					return error("Unable to determine Grails version for the project");
+					return ValidationResult.error("Unable to determine Grails version for the project");
 				} else if (!installVersion.equals(projectVersion)) {
-					return error("Project Grails version ("+projectVersion+ ") does not match install version ("+installVersion+")");
+					return ValidationResult.error("Project Grails version ("+projectVersion+ ") does not match install version ("+installVersion+")");
 				}
 			}
 			return ValidationResult.OK;

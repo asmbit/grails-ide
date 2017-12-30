@@ -255,8 +255,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                         } else {
                             proposals.add(new GroovyFieldProposal(createFieldNode(
                                     entry.getKey(), context, declaringType, entry
-                                            .getValue(), Opcodes.ACC_PUBLIC),
-                                    GRAILS_PROPOSALS_RELEVANCE_MULTIPLIER, GRAILS));
+                                            .getValue(), Opcodes.ACC_PUBLIC)));
                         }
                     }
                 }
@@ -298,8 +297,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                 proposals.add(new GroovyFieldProposal(
                         createFieldNode(entry.getKey(), context,
                                 declaringType, type,
-                                Opcodes.ACC_PUBLIC),
-                                GRAILS_PROPOSALS_RELEVANCE_MULTIPLIER, GRAILS));
+                                Opcodes.ACC_PUBLIC)));
             }
         }
         return proposals;
@@ -324,7 +322,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                 if (mappingFieldName.startsWith(context.completionExpression)) {
                     extraProposals.add(new GroovyFieldProposal(createFieldNode(
                             mappingFieldName, context, enclosingGroovyType,
-                            Opcodes.ACC_STATIC), GRAILS_PROPOSALS_RELEVANCE_MULTIPLIER, GRAILS));
+                            Opcodes.ACC_STATIC)));
                 }
             }
             return extraProposals;
@@ -352,7 +350,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                 if (constraintsFieldName.startsWith(context.completionExpression)) {
                     extraProposals.add(new GroovyFieldProposal(createFieldNode(
                             constraintsFieldName, context, enclosingGroovyType,
-                            Opcodes.ACC_STATIC), GRAILS_PROPOSALS_RELEVANCE_MULTIPLIER, GRAILS));
+                            Opcodes.ACC_STATIC)));
                 }
             }
             
@@ -465,8 +463,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                     proposals.add(new GroovyFieldProposal(
                             createFieldNode(entry.getKey(), context,
                                     declaringType, type,
-                                    Opcodes.ACC_PUBLIC),
-                            GRAILS_PROPOSALS_RELEVANCE_MULTIPLIER, GRAILS));
+                                    Opcodes.ACC_PUBLIC)));
                 } else {
                     proposals.add(new GroovyMethodProposal(
                             createNoArgMethodNode(entry.getKey(),
@@ -484,7 +481,7 @@ public class GrailsProposalProvider implements IProposalProvider {
         List<IGroovyProposal> finderProposals = new ArrayList<IGroovyProposal>(finders.size());
         for (AnnotatedNode finder : finders) {
             if (finder instanceof FieldNode) {
-                finderProposals.add(new GroovyFieldProposal((FieldNode) finder, "GORM")); //$NON-NLS-1$
+                finderProposals.add(new GroovyFieldProposal((FieldNode) finder));
             } else {
                 finderProposals.add(new GroovyMethodProposal((MethodNode) finder, "GORM")); //$NON-NLS-1$
             }
@@ -520,7 +517,7 @@ public class GrailsProposalProvider implements IProposalProvider {
                 proposals.add(new GroovyFieldProposal(
                         createFieldNode(entry.getKey(), context,
                                 declaringType, returnType,
-                                Opcodes.ACC_PUBLIC & Opcodes.ACC_STATIC), GRAILS));
+                                Opcodes.ACC_PUBLIC & Opcodes.ACC_STATIC)));
             }
         }
         return proposals;

@@ -87,7 +87,7 @@ public class JDIMetaClass implements
         throw new IllegalArgumentException("Not implemented (Groovy-Eclipse)");
     }
 
-    public Class<? extends MetaClass> getTheClass() {
+    public Class<?> getTheClass() {
         return origMetaClass != null ? origMetaClass.getTheClass() : Object.class;
     }
 

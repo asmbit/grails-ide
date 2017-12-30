@@ -11,8 +11,10 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.debug.core,
  org.eclipse.core.expressions,
  org.springsource.ide.eclipse.commons.configurator,
- org.springframework.core;bundle-version="[3.0.5.RELEASE,4.2.0)",
+ org.springframework.core,
  org.codehaus.groovy,
+ io.projectreactor.reactor-core,
+ org.reactivestreams.reactive-streams;bundle-version="1.0.0",
  org.springsource.ide.eclipse.commons.frameworks.core,
  org.apache.commons.io,
  org.springsource.ide.eclipse.commons.core,
@@ -21,7 +23,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.jdt.groovy.core;bundle-version="2.8.0",
  org.springsource.ide.eclipse.commons.livexp;visibility:=reexport,
  org.grails.ide.eclipse.runtime.shared;visibility:=reexport,
- org.eclipse.jdt.debug
+ org.eclipse.jdt.debug,
+ org.eclipse.m2e.maven.runtime;bundle-version="1.8.2"
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
@@ -41,4 +44,5 @@ Export-Package: org.grails.ide.eclipse.commands,
  org.grails.ide.eclipse.longrunning,
  org.grails.ide.eclipse.longrunning.client
 Bundle-Localization: plugin
-Import-Package: org.apache.commons.io
+Import-Package: org.apache.commons.io,
+ org.springsource.ide.eclipse.commons.livexp.core
