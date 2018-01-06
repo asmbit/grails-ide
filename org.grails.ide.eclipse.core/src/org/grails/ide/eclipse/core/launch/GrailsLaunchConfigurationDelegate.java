@@ -42,6 +42,7 @@ import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.core.model.IDebugTarget;
 import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.jdt.internal.launching.LaunchingMessages;
+import org.eclipse.jdt.internal.launching.SocketListenConnectorProcess;
 import org.eclipse.jdt.launching.AbstractJavaLaunchConfigurationDelegate;
 import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IVMConnector;
@@ -420,7 +421,7 @@ public class GrailsLaunchConfigurationDelegate extends AbstractJavaLaunchConfigu
 
 		private final IProject project;
 		private List<Integer> killPorts;
-		private IProcess[] processes; //Can be 1 or 2 processes. If debugging forked mode grails one is the parent process the other the child.
+		private IProcess[] processes; //Can be 1 or 2 processes. If debugging forked mode grails one is the socket listener process the other is debugged process.
 
 		public GrailsProcessListener(IProcess[] processes, IProject project, ArrayList<Integer> killPorts) {
 			this.project = project;
@@ -433,35 +434,62 @@ public class GrailsLaunchConfigurationDelegate extends AbstractJavaLaunchConfigu
 				int size = events.length;
 				for (int i = 0; i < size; i++) {
 					for (IProcess process : processes) {
-						if (process != null && process.equals(events[i].getSource())
-								&& events[i].getKind() == DebugEvent.TERMINATE) {
+						Object sourceProcess = events[i].getSource();
+						if (process != null && process.equals(sourceProcess) && events[i].getKind() == DebugEvent.TERMINATE) {
+							if (sourceProcess instanceof SocketListenConnectorProcess) {
+								terminateSocketListenConnectorProcess(process);
+							} else {
+								DebugPlugin.getDefault().removeDebugEventListener(this);
+								terminateForked();
+								Job job = new Job("refresh project") {
 
-							DebugPlugin.getDefault().removeDebugEventListener(this);
-							terminateForked();
-							Job job = new Job("refresh project") {
-
-								@Override
-								protected IStatus run(IProgressMonitor monitor) {
-									try {
-										project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+									@Override
+									protected IStatus run(IProgressMonitor monitor) {
+										try {
+											project.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+										} catch (CoreException e) {
+										}
+										GrailsCoreActivator.getDefault().notifyCommandFinish(project);
+										return Status.OK_STATUS;
 									}
-									catch (CoreException e) {
-									}
-									GrailsCoreActivator.getDefault().notifyCommandFinish(project);
-									return Status.OK_STATUS;
-								}
 
-							};
-							job.setSystem(true);
-							job.setRule(ResourcesPlugin.getWorkspace().getRuleFactory().buildRule());
-							job.setPriority(Job.INTERACTIVE);
-							job.schedule();
+								};
+								job.setSystem(true);
+								job.setRule(ResourcesPlugin.getWorkspace().getRuleFactory().buildRule());
+								job.setPriority(Job.INTERACTIVE);
+								job.schedule();
+							}
 						}
 					}
 				}
 			}
 		}
 
+		private void terminateSocketListenConnectorProcess(IProcess socketProcess) {
+			if (killPorts != null) {
+				for (int killPort : killPorts) {
+					try {
+						URI killUrl = new URI("http://localhost:" + killPort);
+						HttpUtil.ping(killUrl);
+					} catch (Throwable e) {
+					}
+				}
+			}
+			if (processes != null && processes.length > 0) {
+				for (IProcess process : processes) {
+					if (process.equals(socketProcess)) {
+						try {
+							if (process.canTerminate() && !process.isTerminated()) {
+								process.terminate();
+							}
+						} catch (Throwable e) {
+							GrailsCoreActivator.log(e);
+						}
+					}
+				}
+			}
+		}
+		
 		private void terminateForked() {
 			if (killPorts!=null) {
 				for (int killPort : killPorts) {
