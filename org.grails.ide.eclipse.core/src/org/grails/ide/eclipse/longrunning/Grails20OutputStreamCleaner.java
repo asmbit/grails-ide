@@ -13,7 +13,6 @@ package org.grails.ide.eclipse.longrunning;
 import java.io.IOException;
 import java.io.OutputStream;
 
-import org.codehaus.groovy.ast.stmt.DoWhileStatement;
 import org.grails.ide.eclipse.core.launch.GrailsRuntimeProcess;
 
 /**

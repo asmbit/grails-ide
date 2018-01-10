@@ -15,7 +15,6 @@ import java.util.List;
 
 import org.springsource.ide.eclipse.commons.livexp.ui.CommentSection;
 import org.springsource.ide.eclipse.commons.livexp.ui.WizardPageSection;
-import org.springsource.ide.eclipse.commons.livexp.ui.WizardPageWithSections;
 
 public class GrailsImportWizardPageRegular extends GrailsImportWizardPage {
 

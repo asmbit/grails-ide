@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.longrunning.process;
 
-import org.codehaus.groovy.grails.cli.parsing.CommandLineParser;
 import org.grails.ide.eclipse.runtime.shared.longrunning.ProtocolException;
 
 /**

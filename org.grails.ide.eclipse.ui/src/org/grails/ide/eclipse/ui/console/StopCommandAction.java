@@ -12,26 +12,14 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.ui.console;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.eclipse.debug.core.DebugPlugin;
-import org.eclipse.debug.core.ILaunch;
-import org.eclipse.debug.core.ILaunchManager;
-import org.eclipse.debug.core.commands.ITerminateHandler;
-import org.eclipse.debug.core.model.IDebugTarget;
-import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.internal.ui.DebugPluginImages;
 import org.eclipse.debug.internal.ui.IDebugHelpContextIds;
 import org.eclipse.debug.internal.ui.IInternalDebugUIConstants;
-import org.eclipse.debug.internal.ui.commands.actions.DebugCommandService;
+import org.eclipse.debug.internal.ui.views.console.ConsoleMessages;
 import org.eclipse.jface.action.Action;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.texteditor.IUpdate;
-
-import org.eclipse.debug.internal.ui.views.console.ConsoleMessages;
 import org.grails.ide.eclipse.longrunning.client.GrailsCommandExecution;
 
 /**

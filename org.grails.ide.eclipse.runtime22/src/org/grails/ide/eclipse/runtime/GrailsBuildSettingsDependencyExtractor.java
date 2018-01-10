@@ -10,10 +10,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.runtime;
 
-import grails.build.GrailsBuildListener;
-import grails.util.BuildSettings;
-import grails.util.PluginBuildSettings;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
@@ -22,12 +18,15 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 import org.codehaus.groovy.grails.cli.api.BaseSettingsApi;
-import org.codehaus.groovy.grails.cli.support.BuildSettingsAware;
 import org.codehaus.groovy.grails.io.support.Resource;
 import org.codehaus.groovy.grails.plugins.GrailsPluginUtils;
 import org.grails.ide.eclipse.runtime.shared.DependencyData;
 import org.grails.ide.eclipse.runtime.shared.DependencyFileFormat;
 //import org.codehaus.groovy.grails.io.support.Resource;
+
+import grails.build.GrailsBuildListener;
+import grails.util.BuildSettings;
+import grails.util.PluginBuildSettings;
 
 
 /**

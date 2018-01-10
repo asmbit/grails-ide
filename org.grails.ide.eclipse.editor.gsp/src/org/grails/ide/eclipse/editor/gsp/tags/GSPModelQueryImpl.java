@@ -14,7 +14,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.core.resources.IProject;
 import org.eclipse.jst.jsp.core.internal.modelquery.JSPModelQueryImpl;
 import org.eclipse.wst.common.uriresolver.internal.provisional.URIResolver;
 import org.eclipse.wst.sse.core.internal.provisional.IStructuredModel;
@@ -25,8 +24,6 @@ import org.eclipse.wst.xml.core.internal.contentmodel.modelquery.ModelQueryActio
 import org.eclipse.wst.xml.core.internal.contentmodel.modelqueryimpl.SimpleAssociationProvider;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
-
-import org.grails.ide.eclipse.editor.groovy.elements.GrailsWorkspaceCore;
 
 
 /**

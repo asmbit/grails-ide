@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.ui.internal.wizard.inport;
 
-import org.eclipse.jface.resource.ImageDescriptor;
 import org.grails.ide.eclipse.core.wizard.GrailsImportWizardCore;
 import org.springsource.ide.eclipse.commons.livexp.ui.WizardPageWithSections;
 

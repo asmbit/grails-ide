@@ -9,14 +9,3 @@
  *     VMWare, Inc. - initial API and implementation
  *******************************************************************************/
 package org.grails.ide.eclipse.ui.internal.wizard.inport;
-
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.grails.ide.eclipse.core.wizard.GrailsImportWizardCore;
-import org.springsource.ide.eclipse.commons.livexp.core.LiveExpression;
-import org.springsource.ide.eclipse.commons.livexp.core.ValidationResult;
-import org.springsource.ide.eclipse.commons.livexp.ui.WizardPageSection;
-

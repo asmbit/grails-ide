@@ -43,17 +43,16 @@ import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.internal.classpath.PerProjectDependencyDataCache;
 import org.grails.ide.eclipse.core.model.GrailsBuildSettingsHelper;
 import org.grails.ide.eclipse.core.model.IGrailsInstall;
+import org.grails.ide.eclipse.runtime.shared.DependencyData;
+import org.grails.ide.eclipse.ui.contentassist.ClassContentAssistCalculator;
+import org.grails.ide.eclipse.ui.contentassist.IContentAssistContext;
+import org.grails.ide.eclipse.ui.contentassist.IContentAssistProposalRecorder;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.util.StringUtils;
 import org.springsource.ide.eclipse.commons.frameworks.ui.internal.contentassist.ContentProposalAdapter;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
-import org.grails.ide.eclipse.runtime.shared.DependencyData;
-import org.grails.ide.eclipse.ui.contentassist.ClassContentAssistCalculator;
-import org.grails.ide.eclipse.ui.contentassist.IContentAssistContext;
-import org.grails.ide.eclipse.ui.contentassist.IContentAssistProposalRecorder;
-import org.grails.ide.eclipse.ui.internal.inplace.GrailsCompletionUtils.ITextWidget;
 
 /**
  * @author Christian Dupuis

@@ -50,7 +50,6 @@ import org.grails.ide.eclipse.core.internal.plugins.PerProjectPluginCache;
 import org.grails.ide.eclipse.core.launch.ClasspathLocalizer;
 import org.grails.ide.eclipse.core.launch.EclipsePluginClasspathEntry;
 import org.grails.ide.eclipse.core.launch.GrailsLaunchArgumentUtils;
-import org.grails.ide.eclipse.core.model.GrailsInstallManager;
 import org.grails.ide.eclipse.core.model.GrailsVersion;
 import org.grails.ide.eclipse.runtime.shared.SharedLaunchConstants;
 import org.springsource.ide.eclipse.commons.frameworks.core.legacyconversion.IConversionConstants;

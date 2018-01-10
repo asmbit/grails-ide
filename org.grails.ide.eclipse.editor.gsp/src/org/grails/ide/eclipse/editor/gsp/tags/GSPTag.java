@@ -14,10 +14,7 @@ import java.util.Collection;
 import java.util.Map.Entry;
 
 import org.codehaus.groovy.ast.FieldNode;
-import org.eclipse.jst.jsp.core.internal.contentmodel.tld.CMAttributeDeclarationImpl;
-import org.eclipse.jst.jsp.core.internal.contentmodel.tld.CMNamedNodeMapImpl;
 import org.eclipse.wst.xml.core.internal.contentmodel.CMNamedNodeMap;
-
 import org.grails.ide.eclipse.editor.gsp.tags.GSPTagJavaDocParser.GSPTagDescription;
 
 /**

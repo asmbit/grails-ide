@@ -10,11 +10,7 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.longrunning;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.concurrent.TimeoutException;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
@@ -23,15 +19,10 @@ import org.grails.ide.eclipse.commands.GrailsCommand;
 import org.grails.ide.eclipse.commands.GrailsExecutor;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.launch.SynchLaunch.ILaunchResult;
-import org.grails.ide.eclipse.core.launch.SynchLaunch.ResultFromTerminatedLaunch;
 import org.grails.ide.eclipse.core.model.GrailsVersion;
 import org.grails.ide.eclipse.core.model.IGrailsInstall;
-import org.grails.ide.eclipse.core.util.LimitedByteArrayOutputStream;
 import org.grails.ide.eclipse.longrunning.client.GrailsClient;
 import org.grails.ide.eclipse.longrunning.client.GrailsCommandExecution;
-import org.springsource.ide.eclipse.commons.core.util.MultiplexingOutputStream;
-
-import org.grails.ide.eclipse.core.launch.Grails20OutputCleaner;
 
 
 /**

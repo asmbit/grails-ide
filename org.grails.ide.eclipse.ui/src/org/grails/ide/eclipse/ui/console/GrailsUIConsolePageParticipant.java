@@ -12,7 +12,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.ui.console;
 
-import org.eclipse.debug.internal.ui.views.console.ConsoleRemoveAllTerminatedAction;
 import org.eclipse.jface.action.IToolBarManager;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.console.IConsole;

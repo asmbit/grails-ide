@@ -17,11 +17,9 @@ import java.util.Map;
 
 import org.codehaus.groovy.ast.ClassNode;
 import org.codehaus.groovy.ast.FieldNode;
-import org.codehaus.groovy.ast.expr.BinaryExpression;
 import org.codehaus.groovy.ast.expr.ClosureExpression;
 import org.codehaus.groovy.ast.expr.Expression;
 import org.codehaus.groovy.ast.expr.MethodCallExpression;
-import org.codehaus.groovy.ast.expr.VariableExpression;
 import org.codehaus.groovy.ast.stmt.BlockStatement;
 import org.codehaus.groovy.ast.stmt.ExpressionStatement;
 import org.codehaus.groovy.ast.stmt.Statement;
@@ -30,10 +28,7 @@ import org.eclipse.core.resources.IResourceDelta;
 import org.grails.ide.eclipse.core.internal.plugins.GrailsCore;
 import org.grails.ide.eclipse.core.internal.plugins.GrailsElementKind;
 import org.grails.ide.eclipse.core.internal.plugins.IGrailsProjectInfo;
-
 import org.grails.ide.eclipse.editor.groovy.elements.DomainClass;
-import org.grails.ide.eclipse.editor.groovy.elements.GrailsProject;
-import org.grails.ide.eclipse.editor.groovy.elements.GrailsWorkspaceCore;
 
 /**
  * Manages the Named Criteria queries for domain classes in a project

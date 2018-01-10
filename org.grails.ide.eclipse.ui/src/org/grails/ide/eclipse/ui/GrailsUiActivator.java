@@ -14,16 +14,14 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
-import org.grails.ide.eclipse.commands.GroovyCompilerVersionCheck;
 import org.grails.ide.eclipse.commands.JDKCheck;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.longrunning.GrailsProcessManager;
-import org.osgi.framework.BundleContext;
-
 import org.grails.ide.eclipse.ui.console.GrailsUIConsoleProvider;
 import org.grails.ide.eclipse.ui.internal.importfixes.GrailsOutputFolderFixer;
 import org.grails.ide.eclipse.ui.internal.importfixes.GrailsProjectVersionFixer;
 import org.grails.ide.eclipse.ui.internal.importfixes.JDKCheckMessageDialogProvider;
+import org.osgi.framework.BundleContext;
 
 /**
  * @author Christian Dupuis

@@ -25,7 +25,6 @@ import org.grails.ide.eclipse.core.internal.GrailsNature;
 import org.grails.ide.eclipse.core.internal.GrailsResourceUtil;
 import org.grails.ide.eclipse.core.internal.classpath.GrailsPluginsListManager;
 import org.grails.ide.eclipse.core.model.GrailsVersion;
-import org.grails.ide.eclipse.core.util.GrailsNameUtils;
 import org.grails.ide.eclipse.ui.GrailsUiActivator;
 import org.springsource.ide.eclipse.commons.frameworks.core.internal.plugins.Plugin;
 import org.springsource.ide.eclipse.commons.frameworks.ui.internal.plugins.PluginManagerDialog;

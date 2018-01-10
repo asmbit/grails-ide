@@ -13,7 +13,6 @@ package org.grails.ide.eclipse.ui.internal.wizard.inport;
 import java.util.Collections;
 import java.util.Set;
 
-import org.eclipse.jface.layout.GridDataFactory;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.ModifyEvent;
 import org.eclipse.swt.events.ModifyListener;

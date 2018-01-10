@@ -22,7 +22,6 @@ import org.eclipse.core.runtime.Assert;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.internal.classpath.GrailsClasspathUtils;
 import org.grails.ide.eclipse.core.internal.classpath.GrailsDependencyParser;
-import org.grails.ide.eclipse.core.launch.SynchLaunch;
 import org.grails.ide.eclipse.core.model.GrailsVersion;
 import org.grails.ide.eclipse.core.model.IGrailsInstall;
 import org.springsource.ide.eclipse.commons.frameworks.core.internal.commands.BooleanParameterDescriptor;

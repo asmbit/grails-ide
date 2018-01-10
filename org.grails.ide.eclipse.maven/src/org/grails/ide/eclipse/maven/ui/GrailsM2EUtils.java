@@ -12,17 +12,15 @@ package org.grails.ide.eclipse.maven.ui;
 
 import java.io.File;
 import java.lang.reflect.Field;
-import java.util.Arrays;
 import java.util.Collections;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.Status;
-import org.eclipse.jdt.internal.codeassist.ThrownExceptionFinder;
 import org.eclipse.jface.viewers.StructuredSelection;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardDialog;
+import org.eclipse.m2e.core.ui.internal.wizards.MavenImportWizard;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWizard;
@@ -31,8 +29,6 @@ import org.eclipse.ui.internal.WorkbenchPlugin;
 import org.eclipse.ui.wizards.IWizardDescriptor;
 import org.eclipse.ui.wizards.IWizardRegistry;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
-import org.eclipse.m2e.core.ui.internal.wizards.MavenImportWizard;
-import org.eclipse.m2e.core.ui.internal.wizards.MavenImportWizardPage;
 
 @SuppressWarnings("restriction")
 public abstract class GrailsM2EUtils {

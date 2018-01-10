@@ -10,7 +10,6 @@
  *******************************************************************************/
 package org.grails.ide.eclipse.refactoring.rename.ui;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -21,12 +20,9 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.dialogs.ListSelectionDialog;
-
 import org.grails.ide.eclipse.refactoring.preferences.GrailsRefactoringPreferences;
-import org.grails.ide.eclipse.refactoring.rename.type.ITypeRenaming;
-import org.grails.ide.eclipse.refactoring.rename.type.TypeRenaming;
 import org.grails.ide.eclipse.refactoring.rename.type.GrailsTypeRenameParticipant.IGrailsTypeRenameConfigurer;
+import org.grails.ide.eclipse.refactoring.rename.type.ITypeRenaming;
 
 /**
  * Dialog GUI for configuring Grails type rename participant when it is used in the

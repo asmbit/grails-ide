@@ -34,7 +34,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.internal.model.DefaultGrailsInstall;
-import org.springsource.ide.eclipse.commons.core.SpringCorePreferences;
 import org.springsource.ide.eclipse.commons.core.SpringCoreUtils;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;

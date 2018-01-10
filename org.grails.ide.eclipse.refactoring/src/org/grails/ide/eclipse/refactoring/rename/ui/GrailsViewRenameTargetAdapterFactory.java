@@ -13,14 +13,7 @@ package org.grails.ide.eclipse.refactoring.rename.ui;
 import org.codehaus.groovy.eclipse.refactoring.actions.IRenameTarget;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdapterFactory;
-import org.eclipse.jdt.core.ICompilationUnit;
-import org.eclipse.jdt.core.IType;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
-import org.grails.ide.eclipse.core.internal.plugins.GrailsElementKind;
-
-import org.grails.ide.eclipse.editor.groovy.elements.GrailsProject;
-import org.grails.ide.eclipse.editor.groovy.elements.GrailsWorkspaceCore;
-import org.grails.ide.eclipse.editor.groovy.elements.IGrailsElement;
 
 /**
  * @author Kris De Volder
