@@ -27,7 +27,7 @@ Require-Bundle: org.eclipse.ui,
  org.springsource.ide.eclipse.commons.livexp,
  org.grails.ide.eclipse.maven,
  org.eclipse.ui.editors
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin

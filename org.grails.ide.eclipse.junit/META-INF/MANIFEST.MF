@@ -12,5 +12,5 @@ Require-Bundle: org.eclipse.ui,
  org.grails.ide.eclipse.core,
  org.eclipse.debug.ui,
  org.eclipse.jdt.launching
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
