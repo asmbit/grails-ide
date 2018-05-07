@@ -5,9 +5,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/ant-1.8.2.jar"/>
 	<classpathentry kind="lib" path="lib/gant_groovy1.8-1.9.6.jar"/>
-	<classpathentry kind="lib" path="lib/grails-bootstrap-2.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="lib/grails-core-2.2.0.RC1.jar"/>
-	<classpathentry kind="lib" path="lib/jline-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/jansi-1.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/jline-2.14.2.jar"/>
+	<classpathentry kind="lib" path="lib/grails-bootstrap-2.5.3.jar"/>
+	<classpathentry kind="lib" path="lib/grails-core-2.5.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
