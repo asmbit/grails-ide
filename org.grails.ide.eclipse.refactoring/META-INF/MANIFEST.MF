@@ -32,7 +32,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.wst.html.core,
  org.eclipse.search,
  org.grails.ide.eclipse.search
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.grails.ide.eclipse.refactoring.rename,
  org.grails.ide.eclipse.refactoring.rename.action,

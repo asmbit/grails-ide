@@ -26,8 +26,9 @@ Require-Bundle: org.eclipse.ui,
  org.codehaus.groovy.eclipse.core,
  org.springsource.ide.eclipse.commons.livexp,
  org.grails.ide.eclipse.maven,
- org.eclipse.ui.editors
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+ org.eclipse.ui.editors,
+ org.eclipse.jdt.ui;bundle-version="3.13.51"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Eclipse-LazyStart: true
 Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
