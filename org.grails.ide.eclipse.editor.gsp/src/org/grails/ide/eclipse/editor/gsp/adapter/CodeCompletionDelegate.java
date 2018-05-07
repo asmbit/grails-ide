@@ -12,7 +12,6 @@ package org.grails.ide.eclipse.editor.gsp.adapter;
 
 import java.util.List;
 
-import org.codehaus.groovy.eclipse.codeassist.completions.GroovyJavaFieldCompletionProposal;
 import org.codehaus.groovy.eclipse.codeassist.requestor.GroovyCompletionProposalComputer;
 import org.codehaus.groovy.eclipse.core.GroovyCore;
 import org.codehaus.jdt.groovy.model.GroovyCompilationUnit;
@@ -54,7 +53,7 @@ public class CodeCompletionDelegate implements
 
         InternalCompletionContext completionContext = new InternalCompletionContext();
         requestor.acceptContext(completionContext);
-        
+
         GroovyCompletionProposalComputer computer = new GroovyCompletionProposalComputer();
         JavaContentAssistInvocationContext context = createContext((GroovyCompilationUnit) typeRoot, position);
         try {
@@ -77,8 +76,8 @@ public class CodeCompletionDelegate implements
                 CompletionProposal cp = null;
                 if (proposal instanceof LazyJavaCompletionProposal) {
                     cp = (CompletionProposal) ReflectionUtils.getPrivateField(LazyJavaCompletionProposal.class, "fProposal", proposal); //$NON-NLS-1$
-                } else if (proposal instanceof GroovyJavaFieldCompletionProposal) {
-                    cp = ((GroovyJavaFieldCompletionProposal) proposal).getProposal();
+//                } else if (proposal instanceof GroovyJavaFieldCompletionProposal) { // GroovyJavaFieldCompletionProposal is instanceof JavaCompletionProposal and dont have getProposal() in new version
+//                    cp = ((GroovyJavaFieldCompletionProposal) proposal).getProposal();
                 } else if (proposal instanceof JavaCompletionProposal) {
                     cp = createMockProposal((JavaCompletionProposal) proposal);
                 }

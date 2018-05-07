@@ -48,7 +48,7 @@ import org.grails.ide.eclipse.longrunning.LongRunningProcessGrailsExecutor;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.prefs.BackingStoreException;
-import org.springsource.ide.eclipse.commons.core.FileUtil;
+import org.springsource.ide.eclipse.commons.frameworks.core.util.FileUtil;
 
 /**
  * @author Christian Dupuis
