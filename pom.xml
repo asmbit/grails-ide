@@ -7,15 +7,15 @@
 
   <groupId>org.grails.ide.eclipse</groupId>
   <artifactId>org.grails.ide.eclipse.parent</artifactId>
-  <version>3.6.4-SNAPSHOT</version>
+  <version>4.8.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <scm>
-    <connection>scm:git:ssh://git.springsource.com:sts/grails-ide.git</connection>
-    <developerConnection>scm:git:ssh://git.springsource.com:sts/grails-ide.git</developerConnection>
-    <tag>HEAD</tag>
-    <url>http://git.springsource.com/sts/grails-ide</url>
-  </scm>
+<!--   <scm> -->
+<!--     <connection>scm:git:ssh://git.springsource.com:sts/grails-ide.git</connection> -->
+<!--     <developerConnection>scm:git:ssh://git.springsource.com:sts/grails-ide.git</developerConnection> -->
+<!--     <tag>HEAD</tag> -->
+<!--     <url>http://git.springsource.com/sts/grails-ide</url> -->
+<!--   </scm> -->
 
   <modules>
     <module>org.grails.ide.eclipse</module>
@@ -129,6 +129,88 @@
   </properties>
 
   <profiles>
+
+    <profile>
+      <id>e48</id>
+      <properties>
+        <p2.repository.name>SpringSource Tool Suite for Eclipse 4.8</p2.repository.name>
+        <dist.target>e4.8</dist.target>
+        <dist.platform.name>Photon</dist.platform.name>
+        <dist.platform.id>photon</dist.platform.id>
+        <dist.platform.version>4.8</dist.platform.version>
+        <package.qualifierPrefix>e48</package.qualifierPrefix>
+        <version.weaving>1.2.0</version.weaving>
+      </properties>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Central Repository</name>
+          <url>http://central.maven.org/maven2/</url>
+          <layout>default</layout>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>platform</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/eclipse/updates/4.8</url>
+        </repository>
+        <repository>
+          <id>photon</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/releases/photon/</url>
+        </repository>
+        <repository>
+          <id>ajdt</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/tools/ajdt/48/dev/update/</url>
+        </repository>
+        <repository>
+          <id>swtbot</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/technology/swtbot/releases/latest/</url>
+        </repository>
+        <repository>
+          <id>groovy</id>
+          <layout>p2</layout>
+          <url>http://dist.springsource.org/snapshot/GRECLIPSE/e4.8/</url>
+        </repository>
+        <repository>
+          <id>eclipse-integration-commons</id>
+          <layout>p2</layout>
+          <url>http://dist.springsource.com/release/TOOLS/eclipse-integration-commons</url>
+        </repository>
+
+        <repository>
+          <id>orbit</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/tools/orbit/downloads/drops/R20170919201930/repository/</url>
+        </repository>
+
+        <repository>
+          <id>m2e</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/technology/m2e/releases</url>
+        </repository>
+
+        <repository>
+          <id>otdt</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/objectteams/updates/ot2.6</url>
+        </repository>
+        <repository>
+          <id>mylyn</id>
+          <layout>p2</layout>
+          <url>http://download.eclipse.org/mylyn/releases/3.21</url>
+        </repository>
+        <repository>
+          <id>springsource</id>
+          <layout>p2</layout>
+          <url>http://dist.springsource.com/release/TOOLS/update/e4.8</url>
+        </repository>
+      </repositories>
+    </profile>
 
     <profile>
       <id>e47</id>

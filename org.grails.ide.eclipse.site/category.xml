@@ -18,28 +18,28 @@
 	<!-- Dashboard removed: should only be consumed from commons because it is 
 	     eclipse-version specific (JavaFX dependency)
 	<feature 
-		url="features/org.springsource.ide.eclipse.dashboard_3.6.4.qualifier.jar" 
-		id="org.springsource.ide.eclipse.dashboard" version="3.6.4.qualifier">
+		url="features/org.springsource.ide.eclipse.dashboard_4.8.0.qualifier.jar" 
+		id="org.springsource.ide.eclipse.dashboard" version="4.8.0.qualifier">
 		<category name="Core / Grails IDE for Eclipse"/>
 	</feature> -->
 
 <!-- 	<feature  -->
-<!-- 		url="features/org.springsource.ide.eclipse.commons_3.6.4.qualifier.jar"  -->
-<!-- 		id="org.springsource.ide.eclipse.commons" version="3.6.4.qualifier"> -->
+<!-- 		url="features/org.springsource.ide.eclipse.commons_4.8.0.qualifier.jar"  -->
+<!-- 		id="org.springsource.ide.eclipse.commons" version="4.8.0.qualifier"> -->
 <!-- 	</feature> -->
 
 	<!-- Grails IDE features -->
 	<feature
-		url="org.grails.ide.eclipse_3.6.4.qualifier.jar"
-		id="org.grails.ide.eclipse" version="3.6.4.qualifier">
+		url="org.grails.ide.eclipse_4.8.0.qualifier.jar"
+		id="org.grails.ide.eclipse" version="4.8.0.qualifier">
 		<category name="Core / Grails IDE for Eclipse" />
 	</feature>
 	
 	<!-- Test Feature(s) (uncategorised) -->
 <!--     <feature  -->
-<!--     	url="features/org.grails.ide.eclipse.tests_3.6.4.qualifier.jar"  -->
+<!--     	url="features/org.grails.ide.eclipse.tests_4.8.0.qualifier.jar"  -->
 <!--     	id="org.grails.ide.eclipse.tests"  -->
-<!--     	version="3.6.4.qualifier"> -->
+<!--     	version="4.8.0.qualifier"> -->
 <!--     </feature> -->
 
 </site>
