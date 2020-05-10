@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.codehaus.groovy.ast.ClassNode;
-import org.codehaus.groovy.eclipse.core.model.GroovyProjectFacade;
 import org.codehaus.jdt.groovy.model.GroovyCompilationUnit;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IFolder;
@@ -62,7 +61,6 @@ import org.grails.ide.eclipse.editor.groovy.types.PerProjectTypeCache;
 public class GrailsProject {
     
     private final IJavaProject javaProject;
-    private GroovyProjectFacade groovyProject;
     
     private Map<String, IGrailsElement> classNodeGrailsElementCache = new HashMap<String, IGrailsElement>();
 
@@ -84,13 +82,6 @@ public class GrailsProject {
     }
 
 
-    public GroovyProjectFacade getGroovyProject() {
-        if (groovyProject == null) {
-            groovyProject = new GroovyProjectFacade(javaProject);
-        }
-        return groovyProject;
-    }
-    
     /**
      * Converts this {@link ICompilationUnit} into a {@link GrailsElementKind} if
      * it corresponds to a standard Grails artifact.  Otherwise returns {@link GrailsElementKind#OTHER}.
@@ -400,7 +391,12 @@ public class GrailsProject {
      * @return
      */
     private ICompilationUnit getUnit(ClassNode completionType) {
-        IType type = getGroovyProject().groovyClassToJavaType(completionType);
+		IType type = null;
+        try {
+			type = getJavaProject().findType(completionType.getName());
+        } catch (JavaModelException e) {
+            GrailsCoreActivator.log(e);
+		}
         return type != null && !type.isBinary() ? type.getCompilationUnit() : null;
     }
 
@@ -671,7 +667,7 @@ public class GrailsProject {
     }
 
 	public IJavaProject getJavaProject() {
-		return getGroovyProject().getProject();
+		return javaProject;
 	}
 
 	/**

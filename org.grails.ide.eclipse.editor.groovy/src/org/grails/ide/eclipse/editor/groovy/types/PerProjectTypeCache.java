@@ -22,13 +22,13 @@ import org.codehaus.groovy.ast.stmt.ExpressionStatement;
 import org.codehaus.groovy.ast.stmt.ReturnStatement;
 import org.codehaus.groovy.ast.stmt.Statement;
 import org.codehaus.groovy.eclipse.core.compiler.GroovySnippetCompiler;
-import org.codehaus.groovy.eclipse.core.model.GroovyProjectFacade;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResourceDelta;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.groovy.search.VariableScope;
 import org.eclipse.jdt.internal.core.CompilationUnit;
+import org.eclipse.jdt.internal.core.JavaProject;
 import org.grails.ide.eclipse.core.GrailsCoreActivator;
 import org.grails.ide.eclipse.core.internal.plugins.GrailsCore;
 import org.grails.ide.eclipse.core.internal.plugins.GrailsElementKind;
@@ -100,7 +100,7 @@ public class PerProjectTypeCache implements IGrailsProjectInfo {
 
     public void setProject(IProject project) {
         this.project = project;
-        GroovyProjectFacade groovyProject = new GroovyProjectFacade(JavaCore.create(project));
+        JavaProject groovyProject = (JavaProject) JavaCore.create(project);
         if (snippetCompiler != null) {
         	snippetCompiler.cleanup();
         }

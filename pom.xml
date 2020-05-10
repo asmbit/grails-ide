@@ -55,9 +55,9 @@
   <!-- Common Configuration -->
   <organization>
     <name>GoPivotal, Inc.</name>
-    <url>http://spring.io</url>
+    <url>https://spring.io</url>
   </organization>
-  <url>http://spring.io/tools</url>
+  <url>https://spring.io/tools</url>
   <inceptionYear>2007</inceptionYear>
 
   <prerequisites>
@@ -145,7 +145,7 @@
         <repository>
           <id>central</id>
           <name>Central Repository</name>
-          <url>http://central.maven.org/maven2/</url>
+          <url>http://search.maven.org/maven2/</url>
           <layout>default</layout>
           <snapshots>
             <enabled>false</enabled>
@@ -180,7 +180,7 @@
           <id>eclipse-integration-commons</id>
           <layout>p2</layout>
           <url>http://dist.springsource.com/release/TOOLS/eclipse-integration-commons</url>
-<!--           <url>http://dist.springsource.com/${dist.type}/TOOLS/eclipse-integration-commons/${dist.eclipse-integration-commons-version}</url> -->
+<!--           <url>https://dist.springsource.com/${dist.type}/TOOLS/eclipse-integration-commons/${dist.eclipse-integration-commons-version}</url> -->
 <!--           <url>http://dist.springsource.com/snapshot/TOOLS/eclipse-integration-commons/nightly/e4.4/</url> -->
         </repository>
 
